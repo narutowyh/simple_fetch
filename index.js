@@ -36,7 +36,7 @@
  * }
  */
 
-module.exports = ({ url, method = 'GET', headers = {}, body, otherInits }) => {
+export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
   const myInit = {
     method,
     headers: Object.assign(new window.Headers(headers), {
