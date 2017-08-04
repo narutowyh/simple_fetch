@@ -1,0 +1,23 @@
+{
+  "name": "simple_fetch",
+  "version": "1.0.0",
+  "description": "a simple ajax function based on fetch api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narutowyh/simple_fetch.git"
+  },
+  "keywords": [
+    "ajax",
+    "fetch"
+  ],
+  "author": "narutowyh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narutowyh/simple_fetch/issues"
+  },
+  "homepage": "https://github.com/narutowyh/simple_fetch#readme"
+}
