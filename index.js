@@ -34,6 +34,8 @@
  *    code: 102, // 错误码
  *    msg: "请先登录" // 与错误码对应的错误信息
  * }
+ * @return promise 成功获取到数据时resolve、否则reject
+ * todo 错误信息可配置
  */
 
 export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
