@@ -38,7 +38,8 @@
  * todo 错误信息可配置
  */
 
-export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
+export default (args) => {
+  const { url, method = 'GET', headers = {}, body, otherInits } = args
   const myInit = {
     method,
     headers: Object.assign(new window.Headers(headers), {
