@@ -41,7 +41,7 @@
 export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
   const myInit = {
     method,
-    headers: Object.assign(new window.Headers(headers), {
+    headers: Object.assign({}, new window.Headers(headers), {
       'Content-Type': 'application/json'
     })
   }
