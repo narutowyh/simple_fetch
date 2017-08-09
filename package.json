@@ -1,6 +1,6 @@
 {
   "name": "simple_fetch",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a simple ajax function based on fetch api",
   "main": "index.js",
   "scripts": {
