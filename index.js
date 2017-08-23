@@ -61,11 +61,13 @@ export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
       default:
         if (otherInits.headers['Content-Type'] === 'application/x-www-form-urlencoded') {
           const formData = new window.FormData()
+          let formStr = ''
           Object.keys(body).forEach((key) => {
             formData.append(key, body[key])
+            formStr += `&${key}=${body[key]}`
           })
           Object.assign(myInit, {
-            body: formData
+            body: formStr
           })
         } else {
           Object.assign(myInit, {
@@ -82,10 +84,10 @@ export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
           reject(new Error('获取数据时发生网络错误'))
         } else {
           res.json().then((r) => {
-            if (!r.ok) {
+            if (r.ok !==undefined && !r.ok) {
               reject(new Error(r.msg))
             } else {
-              resolve(r.data)
+              resolve(r.data === undefined ? r : r.data)
             }
           }).catch((err) => {
             console.log('返回的数据格式非json', err)
