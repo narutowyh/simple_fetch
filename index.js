@@ -79,11 +79,13 @@ export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
             }
           }).catch((err) => {
             console.log('返回的数据格式非json', err)
+            reject(new Error('返回的数据格式非json'))
           })
         }
       })
       .catch((err) => {
         console.log('获取数据时发生网络错误', err)
+        reject(err)
       })
   })
 }
