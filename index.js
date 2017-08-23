@@ -59,9 +59,16 @@ export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
         url += `?q=${query}`
         break
       default:
-        Object.assign(myInit, {
-          body: JSON.stringify(body)
-        })
+        if (otherInits.headers['Content-Type'] === 'application/x-www-form-urlencoded') {
+          const formData = new window.FormData()
+          Object.keys(body).forEach((key) => {
+            formData.append(key, body[key])
+          })
+        } else {
+          Object.assign(myInit, {
+            body: JSON.stringify(body)
+          })
+        }
     }
   }
   const myRequest = new window.Request(url, myInit)
