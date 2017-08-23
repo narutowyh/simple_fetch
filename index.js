@@ -64,6 +64,9 @@ export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
           Object.keys(body).forEach((key) => {
             formData.append(key, body[key])
           })
+          Object.assign(myInit, {
+            body: formData
+          })
         } else {
           Object.assign(myInit, {
             body: JSON.stringify(body)
