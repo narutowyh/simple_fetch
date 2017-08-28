@@ -38,7 +38,7 @@
  * todo 错误信息可配置
  */
 
-import polyfillFetch from 'fetch-polyfill'
+import 'whatwg-fetch'
 
 export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
   const myInit = {
@@ -80,7 +80,7 @@ export default ({ url, method = 'GET', headers = {}, body, otherInits }) => {
   }
   const myRequest = new window.Request(url, myInit)
   return new Promise((resolve, reject) => {
-    polyfillFetch(myRequest)
+    window.fetch(myRequest)
       .then((res) => {
         if (!res.ok) {
           reject(new Error('获取数据时发生网络错误'))
