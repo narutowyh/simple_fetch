@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/narutowyh/simple_fetch/issues"
   },
-  "homepage": "https://github.com/narutowyh/simple_fetch#readme"
+  "homepage": "https://github.com/narutowyh/simple_fetch#readme",
+  "dependencies": {
+    "fetch-polyfill": "^0.8.2"
+  }
 }
